@@ -20,15 +20,11 @@ for (i = 0; i <= 9; i++)
 		for (k = i; k <= 9; k++)
 		{
 			if (j == 9 && i == k)
-			{
-				k+=1;
-			}
+				k += 1;
 			for (l = 0; l <= 9; l++)
 			{
-				if(i == k && l == 0 && j < 9)
-				{
-					l= j + 1;
-				};
+				if (i == k && l == 0 && j < 9)
+					l = j + 1;
 
 				putchar(i + '0');
 				putchar(j + '0');
@@ -36,7 +32,7 @@ for (i = 0; i <= 9; i++)
 				putchar(k + '0');
 				putchar(l + '0');
 
-				if(i != 9 || j != 8 || k != 9 || l != 9)
+				if (i != 9 || j != 8 || k != 9 || l != 9)
 				{
 					putchar(',');
 					putchar(' ');
@@ -50,6 +46,4 @@ for (i = 0; i <= 9; i++)
 		};
 	};
 };
-
-return (0);
 }
