@@ -3,8 +3,6 @@
 /**
  * main - Entry point
  *
- * Code to output a-zA-Z to the console
- *
  * Return: 0 Always (Success)
  */
 
