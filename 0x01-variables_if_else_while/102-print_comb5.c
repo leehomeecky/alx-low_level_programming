@@ -17,13 +17,13 @@ for (i = 0; i <= 9; i++)
 {
 	for (j = 0; j <= 9; j++)
 	{
-		for (k = 0; k <= 9; k++)
+		for (k = i; k <= 9; k++)
 		{
 			for (l = 0; l <= 9; l++)
 			{
 				if(k == 0 && l == 0)
 				{
-					l+=1;
+					l= j + 1;
 				};
 
 				putchar(i + '0');
