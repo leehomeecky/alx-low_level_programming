@@ -21,7 +21,7 @@ for (i = 0; i <= 9; i++)
 		{
 			for (l = 0; l <= 9; l++)
 			{
-				if(i == k && l == 0)
+				if(i == k && l == 0 && j < 9)
 				{
 					l= j + 1;
 				};
@@ -39,12 +39,14 @@ for (i = 0; i <= 9; i++)
 				}
 				else
 				{
-					break;
+					return (0);
 				}
 			};
 		};
 	};
 };
+
+putchar('\n');
 
 return (0);
 }
