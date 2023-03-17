@@ -10,7 +10,7 @@ int main(void)
 {
 	char _;
 
-	for (_ = '0'; i <= '9'; _++)
+	for (_ = '0'; _ <= '9'; _++)
 	{
 		putchar(_);
 	};
