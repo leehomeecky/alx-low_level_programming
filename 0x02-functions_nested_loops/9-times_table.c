@@ -22,7 +22,8 @@ void times_table(void)
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar(' ');
+				if (multiply < 8)
+					_putchar(' ');
 			}
 		}
 		if (i != 9)
