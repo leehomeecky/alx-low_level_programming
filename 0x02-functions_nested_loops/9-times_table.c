@@ -18,15 +18,16 @@ void times_table(void)
 
 			_putchar((multiply % 10) + '0');
 
-			if (i != 9 || j != 9)
+			if (j != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if (multiply < 5)
-					_putchar(' ');
+			
+			if (multiply < 5)
+				_putchar(' ');
 			}
 		}
-		if (i != 9)
-			_putchar('\n');
+
+		_putchar('\n');
 	}
 }
