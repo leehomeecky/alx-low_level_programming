@@ -12,7 +12,7 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-	bool is_leap_year;
+	int is_leap_year;
 
 	if (year % 4 == 0)
 	{
@@ -20,24 +20,24 @@ void print_remaining_days(int month, int day, int year)
 		{
 			if (year % 400 == 0)
 			{
-				is_leap_year = true;
+				is_leap_year = 1;
 			}
 			else
 			{
-				is_leap_year = false;
+				is_leap_year = 0;
 			}
 		}
 		else
 		{
-			is_leap_year = true;
+			is_leap_year = 1;
 		}
 	}
 	else
 	{
-		is_leap_year = false;
+		is_leap_year = 0;
 	}
 
-	if (is_leap_year)
+	if (is_leap_year == 1)
 	{
 		if (month >= 2 && day >= 60)
 		{
