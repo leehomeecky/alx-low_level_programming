@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  * _isdigit -  a function that print the numbers, from 0 to 9,
+  * print_numbers -  a function that print the numbers, from 0 to 9,
   *followed by a new line.
   *
   */
