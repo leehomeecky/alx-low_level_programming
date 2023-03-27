@@ -11,6 +11,7 @@
 void puts_half(char *str)
 {
 	int index, i = 0;
+	char *initial = str;
 
 	while (*str)
 	{
@@ -27,10 +28,17 @@ void puts_half(char *str)
 		index = (i / 2) + 1;
 	}
 
-	while (index < (i - 1))
+	str = initial;
+	i = 0;
+
+	while (*str)
 	{
-		_putchar(str[index]);
-		index++;
+		if (i >= index)
+		{
+		_putchar(*str);
+		}
+		str++;
+		i++;
 	}
 
 	_putchar('\n');
