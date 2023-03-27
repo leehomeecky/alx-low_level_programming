@@ -14,6 +14,7 @@
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
+	char *initial = src
 
 	while (*src)
 	{
@@ -21,6 +22,7 @@ char *_strcpy(char *dest, char *src)
 		src++;
 		i++;
 	}
+	src = initial;
 
 	return (dest);
 }
