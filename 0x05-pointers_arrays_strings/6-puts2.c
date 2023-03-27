@@ -12,13 +12,13 @@ void puts2(char *str)
 {
 	int i = 1;
 
-	while (*s)
+	while (*str)
 	{
 		if ((i % 2) == 1)
 		{
-			_putchar(*s);
+			_putchar(*str);
 		}
-		s++;
+		str++;
 		i++;
 	}
 
