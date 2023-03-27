@@ -10,6 +10,7 @@
 void rev_string(char *s)
 {
 	int len, index = 0;
+	char temp;
 
 	while (*s)
 	{
@@ -17,18 +18,16 @@ void rev_string(char *s)
 		len++;
 	}
 
-	char invers[(len + 1)];
+	len--;
 
-	invers[len] = '\0';
-
-	s--;
-
-	while (*s > 0)
+	while (len > index)
 	{
-		invers[index] = *s;
+		temp = s[len];
+		s[len] = s[index];
+		s[index] = temp;
+
 		index++;
-		s--;
+		len--;
 	}
 
-	s = invers;
 }
