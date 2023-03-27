@@ -8,7 +8,7 @@
   *
   */
 
-void puts2(char *str);
+void puts2(char *str)
 {
 	int i = 1;
 
