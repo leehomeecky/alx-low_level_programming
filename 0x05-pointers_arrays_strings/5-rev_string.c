@@ -11,6 +11,7 @@ void rev_string(char *s)
 {
 	int len, index = 0;
 	char temp;
+	char *initial = s
 
 	while (*s)
 	{
@@ -19,6 +20,7 @@ void rev_string(char *s)
 	}
 
 	len--;
+	s = initial;
 
 	while (len > index)
 	{
