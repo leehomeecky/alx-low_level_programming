@@ -9,16 +9,17 @@
 
 void rev_string(char *s)
 {
-	int i, j = 0;
+	int i = 0, j = 0;
 	char temp;
+	char *initial = s
 
-	while (s[j++])
+	while (*s)
 	{
 		i++;
 	}
 
 	i--;
-	j = 0;
+	s = initial;
 
 	while (i > j)
 	{
