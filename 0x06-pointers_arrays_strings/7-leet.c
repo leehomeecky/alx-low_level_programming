@@ -11,24 +11,21 @@
 char *leet(char *str)
 {
 	char *initial = str;
-	char *values = "AaEeOoTtLl";
-	char digit[] = "4433007711";
+	char a[] = {'a', 'e', 'o', 't', 'l'};
+	char n[] = {4, 3, 0, 7, 1};
 	int i = 0;
-	char *start = values;
 
 
 	while (*str)
 	{
-		while (*values)
+		while (i < 5)
 		{
-		if (*str == *values)
-		*str = digit[i];
+		if (*str == a[i] || *str == (a[i] - 32))
+		*str = n[i];
 
-		values++;
 		i++;
 		}
 
-		values = start;
 		str++;
 	}
 
