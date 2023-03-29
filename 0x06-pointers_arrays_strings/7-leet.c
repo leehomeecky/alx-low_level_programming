@@ -11,7 +11,6 @@
 char *leet(char *str)
 {
 	char *initial = str;
-	int i = 0;
 
 	while (*str)
 	{
