@@ -21,7 +21,7 @@ char *leet(char *str)
 		while (i < 5)
 		{
 		if (*str == a[i] || *str == (a[i] - 32))
-		*str = n[i];
+		*str = n[i] + '0';
 
 		i++;
 		}
