@@ -13,11 +13,12 @@ char *leet(char *str)
 	char *initial = str;
 	char a[] = {'a', 'e', 'o', 't', 'l'};
 	char n[] = {4, 3, 0, 7, 1};
-	int i = 0;
+	int i ;
 
 
 	while (*str)
 	{
+		i = 0;
 		while (i < 5)
 		{
 		if (*str == a[i] || *str == (a[i] - 32))
