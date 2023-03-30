@@ -9,7 +9,7 @@
 
 void print_number(int n)
 {
-	unsigned int temp, d = n;
+	unsigned int temp = n, d = n;
 	int i = 1;
 
 	if (d < 0)
@@ -17,10 +17,6 @@ void print_number(int n)
 	_putchar('-');
 	 d *= -1;
 	 temp = d;
-	}
-	else
-	{
-	temp = d;
 	}
 
 	if ((d / 10) == 0)
