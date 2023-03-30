@@ -16,14 +16,16 @@ char *rot13(char *s)
 	char n[] = {13, -13};
 	int i;
 
-	return (s);
 	while (*s)
 	{
 	i = 0;
 	while (i < 2)
 	{
 	if ((*s >= l[i] && *s <= u[i]) || (*s >= l[i] - 32 && *s <= u[i] - 32))
+	{
 	*s += n[i];
+	i = 2;
+	}
 
 	i++;
 	}
