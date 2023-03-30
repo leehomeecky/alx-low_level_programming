@@ -13,34 +13,44 @@
   
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-    int i = strlen(n1) - 1;
-    int j = strlen(n2) - 1;
-    int carry = 0;
-    int k = 0;
+    int len1 = 0, len2 = 0, carry = 0, sum = 0;
+    char *p1 = n1, *p2 = n2, *pr = r;
 
-    while (i >= 0 || j >= 0 || carry)
+    while (*p1++)
+        len1++;
+    while (*p2++)
+        len2++;
+
+    if (len1 > size_r || len2 > size_r || len1 + 1 > size_r || len2 + 1 > size_r)
+        return 0;
+
+    p1--, p2--;
+
+    while (p1 >= n1 || p2 >= n2)
     {
-        int digit1 = i >= 0 ? n1[i] - '0' : 0;
-        int digit2 = j >= 0 ? n2[j] - '0' : 0;
-        int sum = digit1 + digit2 + carry;
+        sum = carry;
+        if (p1 >= n1)
+            sum += *p1-- - '0';
+        if (p2 >= n2)
+            sum += *p2-- - '0';
 
-        if (k >= size_r - 1)
-            return 0;
-
-        r[k++] = (char)(sum % 10 + '0');
         carry = sum / 10;
-
-        i--;
-        j--;
+        *pr++ = sum % 10 + '0';
     }
 
-    r[k] = '\0';
-    int len = strlen(r);
-    for (i = 0; i < len / 2; i++)
+    if (carry)
+        *pr++ = carry + '0';
+
+    *pr = '\0';
+
+    if (pr - r > size_r)
+        return 0;
+
+    for (int i = 0; i < (pr - r) / 2; i++)
     {
         char temp = r[i];
-        r[i] = r[len - 1 - i];
-        r[len - 1 - i] = temp;
+        r[i] = r[pr - r - 1 - i];
+        r[pr - r - 1 - i] = temp;
     }
 
     return r;
