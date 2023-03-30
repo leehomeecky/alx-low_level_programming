@@ -16,7 +16,7 @@ char *rot13(char *s)
 	char n[] = {13, -13};
 	int i;
 
-
+	return (s);
 	while (*s)
 	{
 	i = 0;
