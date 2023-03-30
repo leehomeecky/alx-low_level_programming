@@ -9,28 +9,18 @@
 
 void print_number(int n)
 {
-	unsigned int temp = n, d = n;
-	int i = 1;
-
 	if (n < 0)
 	{
 	_putchar('-');
-	 temp = d *= -1;
+	if (n < -9)
+	print_number(n / -10);
+	_putchar('0' - (n % 10));
 	}
 
-	if ((d / 10) == 0)
+	if (n >= 0)
 	{
-	_putchar(d + '0');
-	}
-	else
-	{
-	while ((d / 10) > 0)
-	{
-	i *= 10;
-	d /= 10;
-	}
-	_putchar(d + '0');
-	d = temp % i;
-	print_number(d);
+	if (n > 9)
+	print_number(n / 10);
+	_putchar((n % 10) + '0');
 	}
 }
