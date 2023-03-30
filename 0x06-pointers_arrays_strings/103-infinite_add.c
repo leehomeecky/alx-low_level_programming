@@ -13,44 +13,39 @@
   
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-    int len1 = 0, len2 = 0, carry = 0, sum = 0;
-    char *p1 = n1, *p2 = n2, *pr = r;
+    int carry = 0;
+    int n1_len = strlen(n1);
+    int n2_len = strlen(n2);
+    int i, j;
 
-    while (*p1++)
-        len1++;
-    while (*p2++)
-        len2++;
-
-    if (len1 > size_r || len2 > size_r || len1 + 1 > size_r || len2 + 1 > size_r)
+    // Check if result will fit in buffer
+    if (n1_len + n2_len + 1 > size_r)
         return 0;
 
-    p1--, p2--;
+    // Initialize result string to '\0'
+    for (i = 0; i < size_r; i++)
+        r[i] = '\0';
 
-    while (p1 >= n1 || p2 >= n2)
+    // Add digits from right to left
+    for (i = n1_len - 1, j = n2_len - 1; i >= 0 || j >= 0; i--, j--)
     {
-        sum = carry;
-        if (p1 >= n1)
-            sum += *p1-- - '0';
-        if (p2 >= n2)
-            sum += *p2-- - '0';
-
+        int sum = carry;
+        if (i >= 0)
+            sum += n1[i] - '0';
+        if (j >= 0)
+            sum += n2[j] - '0';
         carry = sum / 10;
-        *pr++ = sum % 10 + '0';
+        r[i + j + 1] = sum % 10 + '0';
     }
 
+    // Add carry digit, if any
     if (carry)
-        *pr++ = carry + '0';
-
-    *pr = '\0';
-
-    if (pr - r > size_r)
-        return 0;
-
-    for (int i = 0; i < (pr - r) / 2; i++)
     {
-        char temp = r[i];
-        r[i] = r[pr - r - 1 - i];
-        r[pr - r - 1 - i] = temp;
+        if (n1_len + n2_len >= size_r)
+            return 0;
+        for (i = n1_len + n2_len - 1; i >= 0; i--)
+            r[i + 1] = r[i];
+        r[0] = carry + '0';
     }
 
     return r;
