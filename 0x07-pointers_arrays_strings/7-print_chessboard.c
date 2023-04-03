@@ -10,7 +10,7 @@ void print_chessboard(char (*a)[8])
 {
 	int i;
 
-	while (*a)
+	while (*(*a + 7))
 	{
 		i = 0;
 		while (i  < 8)
@@ -18,7 +18,6 @@ void print_chessboard(char (*a)[8])
 		_putchar(*(*a + i));
 		i++;
 		}
-		if (*(*(a + 1) + 1) != '\0')
 		_putchar('\n');
 
 		a++;
