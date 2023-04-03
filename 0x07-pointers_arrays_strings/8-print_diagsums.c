@@ -11,11 +11,13 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 	int k = 0, d1 = 0, d2 = 0;
 
 	while (i < size)
 	{
+		j = 0;
+
 		while (j < size)
 		{
 		if (i == j)
