@@ -12,7 +12,7 @@
 void print_diagsums(int *a, int size)
 {
 	int i = 0, j = 0;
-	unsigned int k = 0, d1 = 0, d2 = 0;
+	int k = 0, d1 = 0, d2 = 0;
 
 	while (i < size)
 	{
@@ -28,5 +28,5 @@ void print_diagsums(int *a, int size)
 
 		i++;
 	}
-	printf("%d, %d", d1, d2);
+	printf("%d, %d\n", d1, d2);
 }
