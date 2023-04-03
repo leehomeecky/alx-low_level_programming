@@ -11,15 +11,22 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i = 0, j = size - 1;
-	unsigned int k = 0, l = 0;
+	int i = 0, j = 0;
+	unsigned int k = 0, d1 = 0, d2 = 0;
 
 	while (i < size)
 	{
-		k += *(*(a + i) + i);
-		l += *(*(a + i) + j);
+		while (j < size)
+		{
+		if (i == j)
+		d1 += a[k];
+		if ((i + j) == size - 1)
+		d2 += a[k];
+		k++;
+		j++;
+		}
+
 		i++;
-		j--;
 	}
-	printf("%d, %d", k, l);
+	printf("%d, %d", d1, d2);
 }
