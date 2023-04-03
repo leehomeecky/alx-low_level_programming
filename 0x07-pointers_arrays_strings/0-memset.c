@@ -12,6 +12,8 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
+	char* initial = s;
+
 	while (*s)
 	{
 	if (n > 0)
@@ -22,5 +24,5 @@ char *_memset(char *s, char b, unsigned int n)
 	s++;
 	}
 
-	return (s);
+	return (initial);
 }
