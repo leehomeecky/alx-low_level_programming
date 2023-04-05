@@ -12,7 +12,7 @@ int find_root(int n, int root);
  * Returns @root
  */
 
-find_root(int n, int root)
+int find_root(int n, int root)
 {
 	if ((root * root) == n)
 		return (root);
