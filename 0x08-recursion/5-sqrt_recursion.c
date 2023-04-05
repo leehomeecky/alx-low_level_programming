@@ -9,7 +9,7 @@ int find_root(int n, int root);
  * @n: number to find the root
  * @root: range of number to search through
  *
- * Returns @root
+ * Return: @root
  */
 
 int find_root(int n, int root)
