@@ -21,14 +21,14 @@ int find_root(int n, int root)
 		if (((root + 1) * (root + 1)) == n)
 			return ((root + 1));
 		else if (((root + 1) * (root + 1)) < n)
-			return (find_root(n, (root + 1)));
+			return (find_root(n, (root * 2)));
 	}
 	else if ((root * root) > n)
 	{
 		if (((root - 1) * (root - 1)) == n)
 		return ((root - 1));
 		else if (((root - 1) * (root - 1)) > n)
-		return (find_root(n, (root / 2)));
+		return (find_root(n, (root - 1)));
 	}
 	return (-1);
 }
@@ -45,5 +45,5 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 	return (-1);
-	return (find_root(n, (n / 2)));
+	return (find_root(n, 2));
 }
