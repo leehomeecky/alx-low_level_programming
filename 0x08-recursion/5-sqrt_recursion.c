@@ -1,5 +1,6 @@
 #include "main.h"
 
+int _sqrt_recursion(int n);
 int find_root(int n, int root);
 
 /**
