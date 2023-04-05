@@ -1,26 +1,89 @@
 #include "main.h"
 
-char *check(char *s1, char *s2);
+int len_str(char *s, int len);
+int last_wild(char *s, int p, int i);
+int check(char *s1, char *s, int ls1, int ls2, int p, int i, int j);
 int wildcmp(char *s1, char *s2);
+
+/**
+ * len_str - find the lenght of the string
+ *
+ * @s: string to count
+ * @len: length counter
+ *
+ * Return: @len
+ */
+
+int len_str(char *s, int len)
+{
+	if (*s != '\0')
+	return (len_str(++s, ++len));
+	return (len);
+}
+
+
+/**
+ * last_wild - Searches for the last wild character position
+ *
+ * @s: string to search
+ * @p: position of wild character counter
+ * @i: counter
+ *
+ * Return: p
+ */
+
+int last_wild(char *s, int p, int i)
+{
+	if (*s != '\0')
+	{
+		if (*s == '*')
+		p = i;
+		return (last_wild(++s, p, ++i));
+
+	}
+	return (p);
+}
 
 /**
  * check - Search trough to find the first occurence of a char
  *
  * @s1: char to be searched through
  * @s2: char to mach
+ * @ls1: length of sring 1
+ * @ls2: length of sring 1
+ * @p: position of last wild character
+ * @i: sl counter
+ * @j: s2 counter
  *
  * Return: the pointer to march else 0
  */
 
-char *check(char *s1, char *s2)
+int check(char *s1, char *s2, int ls1, int ls2, int p, int i, int j)
 {
-	if (*s1 != '\0')
-	{
-		if (*s1 == *s2)
-		return (s1);
-		return (check(++s1, s2));
-	}
+	if (ls1 == 0)
+	ls1 = len_str(s1, ls1);
+	if (ls2 == 0)
+	ls2 = len_str(s2, ls2);
+	if (p == -1)
+	p = last_wild(s2, 0, 0);
+
+	if (p == (ls2 - 1))
+	return (1);
+	if (i == 0)
+	i = (p + 1) - ls1;
+	if (j == 0)
+	j = p + 1;
+
+	if ((ls1 - i) != (ls2 - j))
 	return (0);
+
+	if (s1[i] != '\0' && s2[j] != '\0')
+	{
+		if (s1[i] != s2[j])
+		return (0);
+		return (check(s1, s2, ls1, ls2, p, ++i, ++j));
+	}
+	return (1);
 }
 
 /**
@@ -35,26 +98,5 @@ char *check(char *s1, char *s2)
 
 int wildcmp(char *s1, char *s2)
 {
-	if (*s1 != '\0' && *s2 != '\0')
-	{
-		if (*s2 == '*')
-		{
-			if (*(s2 + 1) != '*' && *(s2 + 1) != '\0')
-			{
-			s1 = check(s1, ++s2);
-			return (wildcmp(s1, s2));
-			}
-			else if (*(s2 + 1) == '\0')
-			return (1);
-			else
-			return (wildcmp(s1, ++s2));
-		}
-		else if (*s1 != *s2)
-		return (0);
-		return (wildcmp(++s1, ++s2));
-	}
-	
-	if (*s1 == *s2)
-	return (1);
-	return (0);
+	return (check(s1, s2, 0, 0, -1, 0, 0));
 }
