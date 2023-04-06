@@ -69,10 +69,13 @@ int check(char *s1, char *s2, int ls1, int ls2, int p, int i, int j)
 
 	if (p == (ls2 - 1))
 	return (1);
+	if (p > 0)
+	{
 	if (i == 0)
 	i = (p + 1) - ls1;
 	if (j == 0)
 	j = p + 1;
+	}
 
 	if ((ls1 - i) != (ls2 - j))
 	return (0);
