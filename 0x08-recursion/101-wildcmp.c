@@ -72,7 +72,7 @@ int check(char *s1, char *s2, int ls1, int ls2, int p, int i, int j)
 	if (p > 0)
 	{
 	if (i == 0)
-	i = ((p + 1) - ls2) - ls1;
+	i = ls1 - (ls2 - (p + 1));
 	if (j == 0)
 	j = p + 1;
 	}
