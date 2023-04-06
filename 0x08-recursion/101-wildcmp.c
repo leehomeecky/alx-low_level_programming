@@ -37,7 +37,7 @@ int last_wild(char *s, int p, int i)
 	if (*s != '\0')
 	{
 		if (*s == '*')
-		p = i;
+		p = i + 1;
 		return (last_wild(++s, p, ++i));
 
 	}
@@ -72,9 +72,9 @@ int check(char *s1, char *s2, int ls1, int ls2, int p, int i, int j)
 	if (p > 0)
 	{
 	if (i == 0)
-	i = ls1 - (ls2 - (p + 1));
+	i = ls1 - (ls2 - p);
 	if (j == 0)
-	j = p + 1;
+	j = p;
 	}
 
 	if ((ls1 - i) != (ls2 - j))
