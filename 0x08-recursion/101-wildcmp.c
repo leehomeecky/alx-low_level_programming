@@ -67,7 +67,7 @@ int check(char *s1, char *s2, int ls1, int ls2, int p, int i, int j)
 	if (p == -1)
 	p = last_wild(s2, 0, 0);
 
-	if (p == (ls2 - 1))
+	if (p == ls2)
 	return (1);
 	if (p > 0)
 	{
