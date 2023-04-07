@@ -16,23 +16,17 @@ int main(int argc, char *argv[])
 {
 	int i, j = 0;
 
-	if (argc < 2)
+	for (i = 1; i < argc; i++)
 	{
-	printf("%i\n", 0);
+	if (!isdigit(*argv[i]))
+	{
+	printf("%s\n", "Error");
+	return (1);
 	}
-	else
-	{
-		for (i = 1; i < argc; i++)
-		{
-		if (!isdigit(*argv[i]))
-		{
-		printf("%s\n", "Error");
-		return (1);
-		}
 
-		j += atoi(argv[i]);
-		}
-		printf("%i\n", j);
+	j += atoi(argv[i]);
 	}
+	printf("%i\n", j);
+
 	return (0);
 }
