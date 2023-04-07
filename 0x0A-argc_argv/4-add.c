@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 	if (!isdigit(*argv[i]))
 	{
-	printf("%s\n", "Error");
+	printf("%s\n", "Errorsis");
 	return (1);
 	}
 
