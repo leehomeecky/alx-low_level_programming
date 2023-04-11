@@ -17,7 +17,7 @@ int word_count(char *str);
 
 int str_len(char *str)
 {
-	if (*str == '\0' || *str == ' ' || *str == '\n')
+	if (*str == '\0' || *str == ' ')
 	return (0);
 	return (1 + str_len(++str));
 }
@@ -38,7 +38,7 @@ int word_count(char *str)
 
 	while (*str)
 	{
-	if (*str != ' ' && *str != '\n')
+	if (*str != ' ')
 	{
 	count++;
 	str += str_len(str);
@@ -62,7 +62,7 @@ char **strtow(char *str)
 	int i, j, height, width;
 	char **space;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 	height = word_count(str);
 	space = (char **)malloc((height + 1) * sizeof(char *));
@@ -70,7 +70,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		while (*str == ' ' || *str == '\n')
+		while (*str == ' ')
 		str++;
 		width = str_len(str);
 		space[i] = (char *)malloc((width + 1) * sizeof(char));
