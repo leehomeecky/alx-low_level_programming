@@ -73,7 +73,7 @@ char **strtow(char *str)
 		while (*str == ' ')
 		str++;
 		width = str_len(str);
-		space[i] = (char *)malloc(width * sizeof(char));
+		space[i] = (char *)malloc((width + 1) * sizeof(char));
 		if (space[i] == NULL)
 		{
 		for (j = i - 1; j >= 0; j--)
@@ -88,6 +88,7 @@ char **strtow(char *str)
 			space[i][j] = *str;
 			str++;
 		}
+		space[i][j] = '\0';
 	}
 	space[i] = (char *)malloc(sizeof(char));
 	space[i][0] = '\0';
