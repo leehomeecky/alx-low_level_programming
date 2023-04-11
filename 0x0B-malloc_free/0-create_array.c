@@ -18,7 +18,7 @@ char *create_array(unsigned int size, char c)
 
 	if (size != 0)
 	{
-	space = (char *)malloc(size);
+	space = (char *)malloc(size * sizeof(char));
 	if (space != NULL)
 	{
 		for (i = 0; i < size; i++)
