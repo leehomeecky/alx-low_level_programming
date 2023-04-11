@@ -34,7 +34,7 @@ char **strtow(char *str)
 	int i, j, k = 0, height = 1, width;
 	char **space;
 
-	if (str == NULL || str == "")
+	if (str == NULL || strncmp(str, "", 1))
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
