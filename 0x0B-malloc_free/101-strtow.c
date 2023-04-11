@@ -59,7 +59,7 @@ int word_count(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, height = 1, width;
+	int i, j, height, width;
 	char **space;
 
 	if (str == NULL || str[0] == '\0')
