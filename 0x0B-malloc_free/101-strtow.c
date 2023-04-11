@@ -17,7 +17,7 @@ int word_count(char *str);
 
 int str_len(char *str)
 {
-	if (*str == '\0' || *str == ' ')
+	if (*str == '\0' || *str == ' ' || *str == '\n')
 	return (0);
 	return (1 + str_len(++str));
 }
