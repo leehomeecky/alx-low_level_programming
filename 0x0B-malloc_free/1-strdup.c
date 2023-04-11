@@ -46,5 +46,5 @@ char *_strdup(char *str)
 		return (space);
 	}
 	}
-	return (NULL);
+	return ('\0');
 }
