@@ -90,7 +90,6 @@ char **strtow(char *str)
 		}
 		space[i][j] = '\0';
 	}
-	space[i] = (char *)malloc(sizeof(char));
-	space[i][0] = '\0';
+	space[i] = NULL;
 	return (space);
 }
