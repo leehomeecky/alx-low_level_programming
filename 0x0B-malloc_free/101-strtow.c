@@ -3,6 +3,7 @@
 #include "main.h"
 
 int str_len(char *str);
+int word_count(char *str);
 
 
 /**
@@ -23,6 +24,32 @@ int str_len(char *str)
 
 
 /**
+ * word_count - counts the numbers of words in a sentence
+ *
+ * @str: sentence to be counted
+ *
+ * Return: numbers of words in @str
+ */
+
+
+int word_count(char *str)
+{
+	int count = 0;
+
+	while (*str)
+	{
+	if (*str != ' ')
+	{
+	count++;
+	str += str_len(str);
+	}
+	str++;
+	}
+	return (count);
+}
+
+
+/**
  * strtow - a function that splits a string into words.
  *
  * @str: String to be seperated
@@ -32,22 +59,20 @@ int str_len(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k = 0, height = 1, width;
+	int i, j, height = 1, width;
 	char **space;
 
-	if (str == NULL || strncmp(str, "", 1))
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	for (i = 0; str[i] != '\0'; i++)
-	{
-	if (str[i] == ' ')
-	height++;
-	}
+	height = word_count(str);
 	space = (char **)malloc((height + 1) * sizeof(char *));
 	if (space == NULL)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		width = str_len(str + k);
+		while (*str == ' ')
+		str++;
+		width = str_len(str);
 		space[i] = (char *)malloc(width * sizeof(char));
 		if (space[i] == NULL)
 		{
@@ -60,10 +85,9 @@ char **strtow(char *str)
 		}
 		for (j = 0; j < width; j++)
 		{
-			space[i][j] = str[k];
-			k++;
+			space[i][j] = *str;
+			str++;
 		}
-		k++;
 	}
 	space[i] = (char *)malloc(sizeof(char));
 	space[i][0] = '\0';
