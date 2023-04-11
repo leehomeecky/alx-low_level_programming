@@ -70,7 +70,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		while (*str == ' ')
+		while (*str == ' ' || *str == '\n')
 		str++;
 		width = str_len(str);
 		space[i] = (char *)malloc((width + 1) * sizeof(char));
