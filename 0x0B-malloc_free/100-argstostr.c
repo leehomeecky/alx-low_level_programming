@@ -33,25 +33,22 @@ char *argstostr(int ac, char **av)
 	char *space;
 	int i, j, k = 0, size = 0;
 
-	if (ac > 1)
+	if (ac > 0)
 	{
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	size += str_len(av[i]);
-	space = (char *)malloc((size + ac - 2) * sizeof(char));
+	space = (char *)malloc((size + ac) * sizeof(char));
 	if (space != NULL)
 	{
-		for (i = 1; i < ac; i++)
+		for (i = 0; i < ac; i++)
 		{
 			for (j = 0; j < str_len(av[i]); j++)
 			{
 			space[k] = av[i][j];
 			k++;
 			}
-			if (i < ac - 1)
-			{
 			space[k] = '\n';
 			k++;
-			}
 		}
 		return (space);
 	}
