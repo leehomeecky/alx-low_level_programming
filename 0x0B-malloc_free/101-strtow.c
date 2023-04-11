@@ -38,7 +38,7 @@ int word_count(char *str)
 
 	while (*str)
 	{
-	if (*str != ' ')
+	if (*str != ' ' && *str != '\n')
 	{
 	count++;
 	str += str_len(str);
