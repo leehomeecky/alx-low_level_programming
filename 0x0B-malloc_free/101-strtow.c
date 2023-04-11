@@ -41,7 +41,7 @@ int word_count(char *str)
 	if (*str != ' ')
 	{
 	count++;
-	str += str_len(str);
+	str += str_len(str) - 1;
 	}
 	str++;
 	}
