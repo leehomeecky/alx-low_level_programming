@@ -13,7 +13,7 @@ int str_len(char *str);
 
 int str_len(char *str)
 {
-	if (*str == '\0' || *srt == NULL)
+	if (*str == '\0' || *str == NULL)
 	return (0);
 	return (1 + str_len(++str));
 }
