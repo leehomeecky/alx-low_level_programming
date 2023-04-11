@@ -33,9 +33,9 @@ char *_strdup(char *str)
 	char *space;
 	int i, size;
 
-	size = str_len(str);
 	if (str != NULL)
 	{
+	size = str_len(str);
 	space = (char *)malloc(size + 1);
 	if (space != NULL)
 	{
