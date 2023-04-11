@@ -13,7 +13,7 @@ int str_len(char *str);
 
 int str_len(char *str)
 {
-	if (*str == '\0' || str == NULL)
+	if (*str == '\0')
 	return (0);
 	return (1 + str_len(++str));
 }
@@ -34,9 +34,9 @@ char *_strdup(char *str)
 	int i, size;
 
 	size = str_len(str);
-	if (size != 0)
+	if (str != NULL)
 	{
-	space = (char *)malloc(size);
+	space = (char *)malloc(size + 1);
 	if (space != NULL)
 	{
 		for (i = 0; i < size; i++)
@@ -46,5 +46,5 @@ char *_strdup(char *str)
 		return (space);
 	}
 	}
-	return ('\0');
+	return (NULL);
 }
