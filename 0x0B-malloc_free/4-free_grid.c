@@ -5,6 +5,7 @@
  * free_grid - a function that frees a 2 dimensional grid.
  *
  * @height: height of the array
+ * @grid: Pointer to a 2-dimensional array
  */
 
 void free_grid(int **grid, int height)
