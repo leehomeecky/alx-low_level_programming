@@ -62,7 +62,7 @@ char **strtow(char *str)
 	int i, j, height, width;
 	char **space;
 
-	if (str == NULL || *str == ' ')
+	if (str == NULL || *str == '\0' || (str[0] == ' ' && str[1] == '\0'))
 		return (NULL);
 	height = word_count(str);
 	space = (char **)malloc((height + 1) * sizeof(char *));
