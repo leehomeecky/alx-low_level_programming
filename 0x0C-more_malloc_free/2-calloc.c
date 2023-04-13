@@ -13,26 +13,18 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void **space;
-	unsigned int i;
+	void *space;
+	unsigned int i, *mem;
 
-	if (nmemb < 1 || size < 1)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
-	space = (void **)malloc(nmemb * sizeof(void *));
+	space = malloc(nmemb * size);
 	if (space == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb; i++)
+	mem = space;
+	for (i = 0; i < nmemb * size; i++)
 	{
-	space[i] = (void *)malloc(size);
-	if (space[i] == NULL)
-	{
-		for (i = i - 1; i >= 0; i--)
-		{
-			free(space[i]);
-		}
-		free(space);
-		return (NULL);
-	}
+	mem[i] = 0;
 	}
 	return (space);
 }
