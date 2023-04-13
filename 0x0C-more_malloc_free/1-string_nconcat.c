@@ -47,17 +47,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	space = (char *)malloc((no_s1 + no_s2 + 1) * sizeof(char));
 	if (space == NULL)
 		return ('\0');
-	while (*s1)
-	{
-	space[i] = *s1;
-	i++;
-	s1++;
-	}
+	for (i = 0; i < no_s1; i++)
+		space[i] = s1[i];
 	for (j = 0; j < no_s2; j++)
-	{
-	space[i] = s2[j];
-	i++;
-	}
-	space[i] = '\0';
+		space[(i + j)] = s2[j];
+	space[(i + j)] = '\0';
 	return (space);
 }
