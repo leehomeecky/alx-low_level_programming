@@ -53,19 +53,17 @@ char *_strcopy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
-	dog_t *my_dog;
-	char *dog_name = (char *)malloc((str_len(name)) * sizeof(char));
-	char *dog_owner = (char *)malloc((str_len(owner)) * sizeof(char));
+	dog_t *my_dog = (dog_t *)malloc(sizeof(dog_t));
 
-	if (dog_name == NULL || dog_owner == NULL)
+	if (my_dog == NULL)
 		return (NULL);
-	for (i = 0; i < str_len(name); i++)
-		dog_name[i] = name[i];
-	for (i = 0; i < str_len(owner); i++)
-		dog_owner[i] = owner[i];
-	my_dog->name = dog_name;
+	my_dog->name = (char *)malloc((str_len(name)) * sizeof(char) + 1);
+	my_dog->owner = (char *)malloc((str_len(owner)) * sizeof(char) + 1);
+
+	if (my_dog->name == NULL || my_dog->owner == NULL)
+		return (NULL);
+	my_dog->name = _strcopy(my_dog->name, name);
 	my_dog->age = age;
-	my_dog->owner = dog_owner;
+	my_dog->owner = _strcopy(my_dog->owner, owner);
 	return (my_dog);
 }
