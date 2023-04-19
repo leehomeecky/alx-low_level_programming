@@ -1,17 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "function_pointers.h"
 
 /**
- * print_name - a function that prints a name.
+ * main - Prints the opcodes of itself.
  *
- * @name: pointer to name;
- * @f: function pointer;
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: Always 0.
  */
-void print_name(char *name, void (*f)(char *))
+int main(int argc, char *argv[])
 {
-	if (name == NULL || f == NULL)
-		return;
+	int bytes, index;
+	int (*address)(int, char **) = main;
+	unsigned char opcode;
 
-	f(name);
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	for (index = 0; index < bytes; index++)
+	{
+		opcode = *(unsigned char *)address;
+		printf("%.2x", opcode);
+
+		if (index == bytes - 1)
+			continue;
+		printf(" ");
+
+		address++;
+	}
+
+	printf("\n");
+
+	return (0);
 }
