@@ -94,13 +94,13 @@ void print_all(const char * const format, ...)
 	{
 		j = 0;
 
-		while (j < 4 && (*(format + i) != *(funcs[j].idn)))
+		while (j < 4 && (*(format + i) != *((funcs + j)->idn)))
 			j++;
 
 		if (j < 4)
 		{
 			printf("%s", separator);
-			funcs[j].prt_func(args);
+			(funcs + j)->prt_func(args);
 			separator = ", ";
 		}
 
