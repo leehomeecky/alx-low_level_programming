@@ -72,7 +72,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	int i = 0, j;
 	char *q = "";
-	print_f x[] = {
+	print_f funcs[] = {
 			{"i", print_int},
 			{"c", print_char},
 			{"s", print_str},
@@ -80,17 +80,20 @@ void print_all(const char * const format, ...)
 		};
 
 	va_start(args, format);
-	while (format && *(format + i))
+	while (format && (*(format + i)))
 	{
 		j = 0;
-		while (j < 4 && *(format + i) != *((x + j)->idn))
+
+		while (j < 4 && (*(format + i) != *((funcs + j)->idn)))
 			j++;
+
 		if (j < 4)
 		{
-		printf("%s", q);
-		(x + j)->prt_func(args);
-		q = ",";
+			printf("%s", q);
+			(funcs + j)->prt_func(args);
+			q = ", ";
 		}
+
 		i++;
 	}
 	printf("\n");
