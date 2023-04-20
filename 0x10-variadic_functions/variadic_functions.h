@@ -1,7 +1,7 @@
 #ifndef VARIADIC_FUNCTION_H
 #define VARIADIC_FUNCTION_H
 
-#include <stdarg>
+#include <stdarg.h>
 
 /**
  * struct print_stc - structure for print functions, and identifier;
