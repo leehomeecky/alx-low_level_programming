@@ -7,7 +7,7 @@ void print_char(va_list args);
 void print_int(va_list args);
 void print_str(va_list args);
 void print_flt(va_list args);
-
+void print_all(const char * const format, ...);
 /**
  * print_char - prints a character
  *
