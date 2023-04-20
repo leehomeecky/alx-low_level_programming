@@ -92,5 +92,7 @@ void print_all(const char * const format, ...)
 		(x + j)->prt_func(args);
 		q = ",";
 		}
+		i++;
 	}
+	printf("\n");
 }
