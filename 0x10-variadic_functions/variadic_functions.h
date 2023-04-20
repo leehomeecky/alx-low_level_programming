@@ -13,7 +13,7 @@
 typedef struct print_stc
 	{
 	char *idn;
-	void (*prt_func)(va_list arg);
+	void (*prt_func)(va_list args);
 	} print_f;
 
 int _putchar(char c);

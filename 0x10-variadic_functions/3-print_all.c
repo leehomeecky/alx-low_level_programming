@@ -13,9 +13,9 @@ void print_all(const char * const format, ...);
  * @args: valued argument;
  */
 
-void print_char(va_list arg)
+void print_char(va_list args)
 {
-	printf("%c", va_arg(arg, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -24,9 +24,9 @@ void print_char(va_list arg)
  * @args: valued argument;
  */
 
-void print_int(va_list arg)
+void print_int(va_list args)
 {
-	printf("%i", va_arg(arg, int));
+	printf("%i", va_arg(args, int));
 }
 
 /**
@@ -35,11 +35,11 @@ void print_int(va_list arg)
  * @args: valued argument;
  */
 
-void print_str(va_list arg)
+void print_str(va_list args)
 {
 	char *s;
 
-	s = va_arg(arg, char *);
+	s = va_arg(args, char *);
 
 	if (s == NULL)
 	{
@@ -55,9 +55,9 @@ void print_str(va_list arg)
  * @args: valued argument;
  */
 
-void print_flt(va_list arg)
+void print_flt(va_list args)
 {
-	printf("%f", va_arg(arg, double));
+	printf("%f", va_arg(args, double));
 }
 
 /**
