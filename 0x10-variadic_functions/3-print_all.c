@@ -16,7 +16,8 @@ void print_all(const char * const format, ...);
 
 void print_char(va_list args)
 {
-	printf("%c", va_arg(args, int));
+	char s = va_arg(args, int);
+	printf("%c", s);
 }
 
 /**
@@ -27,7 +28,8 @@ void print_char(va_list args)
 
 void print_int(va_list args)
 {
-	printf("%i", va_arg(args, int));
+	int i = va_arg(args, int);
+	printf("%i", i);
 }
 
 /**
@@ -58,7 +60,8 @@ void print_str(va_list args)
 
 void print_flt(va_list args)
 {
-	printf("%f", va_arg(args, double));
+	float i = va_arg(args, double);
+	printf("%f", i);
 }
 
 /**
