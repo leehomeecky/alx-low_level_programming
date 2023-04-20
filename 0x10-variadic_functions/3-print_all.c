@@ -16,7 +16,9 @@ void print_all(const char * const format, ...);
 
 void print_char(va_list args)
 {
-	char s = va_arg(args, int);
+	char s;
+
+	s = va_arg(args, int);
 	printf("%c", s);
 }
 
@@ -28,7 +30,9 @@ void print_char(va_list args)
 
 void print_int(va_list args)
 {
-	int i = va_arg(args, int);
+	int i;
+
+	i= va_arg(args, int);
 	printf("%i", i);
 }
 
@@ -60,7 +64,9 @@ void print_str(va_list args)
 
 void print_flt(va_list args)
 {
-	float i = va_arg(args, double);
+	float i;
+	
+	i = va_arg(args, double);
 	printf("%f", i);
 }
 
@@ -84,10 +90,10 @@ void print_all(const char * const format, ...)
 		};
 
 	va_start(args, format);
-	while (format && *(format + i))
+	while (format && (*(format + i)))
 	{
 		j = 0;
-		while (j < 4 && *(format + i) != *((x + j)->idn))
+		while (j < 4 && (*(format + i) != *((x + j)->idn)))
 			j++;
 		if (j < 4)
 		{
