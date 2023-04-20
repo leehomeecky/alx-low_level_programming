@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-void print_char(va_list arg);
-void print_int(va_list arg);
-void print_float(va_list arg);
-void print_string(va_list arg);
+void print_char(va_list args);
+void print_int(va_list args);
+void print_float(va_list args);
+void print_string(va_list args);
 void print_all(const char * const format, ...);
 
 /**
@@ -13,9 +13,9 @@ void print_all(const char * const format, ...);
  * @arg: A list of arguments pointing to
  *       the character to be printed.
  */
-void print_char(va_list arg)
+void print_char(va_list args)
 {
-	printf("%c", va_arg(arg, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -23,10 +23,10 @@ void print_char(va_list arg)
  * @arg: A list of arguments pointing to
  *       the integer to be printed.
  */
-void print_int(va_list arg)
+void print_int(va_list args)
 {
 
-	printf("%d", va_arg(arg, int));
+	printf("%d", va_arg(args, int));
 }
 
 /**
@@ -34,9 +34,9 @@ void print_int(va_list arg)
  * @arg: A list of arguments pointing to
  *       the float to be printed.
  */
-void print_float(va_list arg)
+void print_float(va_list args)
 {
-	printf("%f", va_arg(arg, double));
+	printf("%f", va_arg(args, double));
 }
 
 /**
@@ -44,11 +44,11 @@ void print_float(va_list arg)
  * @arg: A list of arguments pointing to
  *       the string to be printed.
  */
-void print_string(va_list arg)
+void print_string(va_list args)
 {
 	char *str;
 
-	str = va_arg(arg, char *);
+	str = va_arg(args, char *);
 
 	if (str == NULL)
 	{
