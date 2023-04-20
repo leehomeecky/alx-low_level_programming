@@ -93,12 +93,12 @@ void print_all(const char * const format, ...)
 	while (format && (*(format + i)))
 	{
 		j = 0;
-		while (j < 4 && (*(format + i) != *((x + j)->idn)))
+		while (j < 4 && (*(format + i) != *(x[j].idn)))
 			j++;
 		if (j < 4)
 		{
 		printf("%s", q);
-		(x + j)->prt_func(args);
+		x[j].prt_func(args);
 		q = ",";
 		}
 		i++;
