@@ -3,15 +3,15 @@
 /**
  * free_list - a function that frees a list_t list.
  *
- * @h: head of the linked list
+ * @head: head of the linked list
  */
 
 void free_list(list_t *head)
 {
-	const list_t *temp, *temp2;
+	list_t *temp, *temp2;
 
 	temp = head;
-	if (h == NULL)
+	if (head == NULL)
 	return;
 	while (temp != NULL)
 	{
