@@ -29,7 +29,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int num = 0, mul = 1;
 	int len;
 
-	if (*b == '\0' || b == NULL)
+	if (b == '\0' || b == NULL)
 		return (0);
 	len = str_len(b);
 	len--;
