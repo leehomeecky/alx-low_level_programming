@@ -1,6 +1,5 @@
 #include "main.h"
 
-unsigned int str_len(const char *);
 /**
  * str_len - a function to grt the length of a string
  *
