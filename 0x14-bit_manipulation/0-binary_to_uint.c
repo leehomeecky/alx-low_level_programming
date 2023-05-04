@@ -30,12 +30,12 @@ unsigned int binary_to_uint(const char *b)
 	int len;
 
 	if (*b == '\0' || b == NULL)
-		return (0);
+		return (1);
 	len = str_len(b);
 	while ((len -= 1) >= 0)
 	{
 		if (b[len] != '1' && b[len] != '0')
-			return (1);
+			return (0);
 		num += (b[len] - '0') * mul;
 		mul *= 2;
 		len--;
