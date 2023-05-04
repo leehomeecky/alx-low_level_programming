@@ -11,7 +11,7 @@
 int str_len(const char *str)
 {
 	if (*str == '\0')
-		return (1);
+		return (0);
 
 	return (1 + str_len(++str));
 }
@@ -32,7 +32,8 @@ unsigned int binary_to_uint(const char *b)
 	if (*b == '\0' || b == NULL)
 		return (0);
 	len = str_len(b);
-	while ((len -= 1) >= 0)
+	len--;
+	while (len >= 0)
 	{
 		if (b[len] != '1' && b[len] != '0')
 			return (0);
