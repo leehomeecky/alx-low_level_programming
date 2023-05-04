@@ -23,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 				result = result | 1;
 		}
 		else
-			return (0);
+		return (0);
 	}
 	return (result)
 	}
