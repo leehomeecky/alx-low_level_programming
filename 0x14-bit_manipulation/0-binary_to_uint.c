@@ -1,22 +1,6 @@
 #include "main.h"
 
 /**
- * str_len - a function to grt the length of a string
- *
- * @str: pointer to string to be counted
- *
- * Return: length of string
- */
-
-int str_len(const char *str)
-{
-	if (*str == '\0')
-		return (0);
-
-	return (1 + str_len(++str));
-}
-
-/**
  * binary_to_uint - function that converts a binary number to an unsigned int.
  *
  * @b: pointing to a string of 0 and 1 chars
