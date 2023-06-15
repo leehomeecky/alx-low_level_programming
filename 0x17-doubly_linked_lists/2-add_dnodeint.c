@@ -3,8 +3,8 @@
 /**
  * add_dnodeint -  a function that adds a new node at the beginning
  * of a dlistint_t list.
- * @head: A pointer to the head of the dlistint_t list.
- * @n: The number for the new node to contain.
+ * @head: a pointer to the head of the dlistint_t list.
+ * @n: the number for the new node to contain.
  *
  * Return: the address of the new element, or NULL if it failed
  */
