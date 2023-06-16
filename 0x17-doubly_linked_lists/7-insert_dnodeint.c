@@ -3,7 +3,7 @@
 /**
  * insert_dnodeint_at_index - a function that inserts a
  * new node at a given position.
- * 
+ *
  * @h: pointer to the head of the dlistint_t list.
  * @idx: the position to insert the new node.
  * @n: integer for the new node to contain.
