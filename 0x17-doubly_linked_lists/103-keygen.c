@@ -4,7 +4,7 @@
 
 /**
  * main - Entry point.
- * 
+ *
  * @argc: number of arguments.
  * @argv: An array of pointers to the arguments.
  *
